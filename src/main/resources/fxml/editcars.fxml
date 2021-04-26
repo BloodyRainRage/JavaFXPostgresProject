@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="456.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.baddragon.controllers.CarsController">
+   <children>
+      <TableView fx:id="tvCars" layoutX="200.0" layoutY="100.0" onMouseClicked="#selectRow" prefHeight="358.0" prefWidth="403.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="43.0" text="ID" />
+          <TableColumn fx:id="colCarNum" prefWidth="84.0" text="Car number" />
+            <TableColumn fx:id="colCarCol" prefWidth="73.0" text="Car colour" />
+            <TableColumn fx:id="colCarMark" prefWidth="100.0" text="Car mark" />
+            <TableColumn fx:id="colCarFor" prefWidth="88.0" text="Is car foreign" />
+        </columns>
+      </TableView>
+      <VBox layoutX="14.0" layoutY="124.0" prefHeight="148.0" prefWidth="163.0" spacing="5.0">
+         <children>
+            <TextField fx:id="txtId" editable="false" promptText="ID" />
+            <AnchorPane>
+               <children>
+                  <TextField fx:id="txtNum" prefHeight="25.0" prefWidth="163.0" promptText="Car number" />
+               </children>
+            </AnchorPane>
+            <TextField fx:id="txtCol" promptText="Car colour" />
+            <TextField fx:id="txtMark" promptText="Car mark" />
+            <CheckBox fx:id="checkIsFor" mnemonicParsing="false" text="Is car foreign">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </CheckBox>
+         </children>
+      </VBox>
+      <Button fx:id="btnRefresh" layoutX="200.0" layoutY="68.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+      <Button layoutX="14.0" layoutY="68.0" mnemonicParsing="false" onAction="#insert" text="Add new car" />
+      <Button fx:id="btnUpdate" layoutX="11.0" layoutY="279.0" mnemonicParsing="false" onAction="#update" prefHeight="25.0" prefWidth="83.0" text="Update" />
+      <Button fx:id="btnDelete" layoutX="98.0" layoutY="279.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="83.0" text="Delete" />
+   </children>
+</AnchorPane>
