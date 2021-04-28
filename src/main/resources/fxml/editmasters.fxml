@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="336.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.baddragon.controllers.MastersController">
+   <children>
+      <VBox layoutX="14.0" layoutY="100.0" prefHeight="55.0" prefWidth="193.0" spacing="5.0">
+         <children>
+            <TextField fx:id="txtId" editable="false" promptText="ID" />
+            <TextField fx:id="txtName" prefHeight="25.0" prefWidth="177.0" promptText="Master name" />
+         </children>
+      </VBox>
+      <Button layoutX="14.0" layoutY="165.0" mnemonicParsing="false" onAction="#update" prefHeight="25.0" prefWidth="66.0" text="Update" />
+      <Button layoutX="87.0" layoutY="165.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="66.0" text="Delete" />
+      <Button fx:id="txtInsert" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#insert" prefHeight="25.0" prefWidth="83.0" text="Add master" />
+      <TableView fx:id="tvMasters" layoutX="255.0" layoutY="78.0" onMouseClicked="#selectRow" prefHeight="200.0" prefWidth="331.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="247.0" text="Master name" />
+        </columns>
+      </TableView>
+      <Button layoutX="255.0" layoutY="47.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+   </children>
+</AnchorPane>

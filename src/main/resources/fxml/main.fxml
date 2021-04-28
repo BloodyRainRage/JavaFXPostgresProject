@@ -51,11 +51,16 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Edit Masters" />
+                    <MenuItem mnemonicParsing="false" onAction="#onMastersEdit" text="Edit Masters" />
                         <MenuItem fx:id="menuEditCars" mnemonicParsing="false" onAction="#onCarsEdit" text="Edit cars" />
-                        <MenuItem mnemonicParsing="false" text="Edit services" />
+                        <MenuItem mnemonicParsing="false" onAction="#onServiceEdit" text="Edit services" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Reports">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onMenuExport" text="Export" />
+                    </items>
+                  </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
                     <MenuItem mnemonicParsing="false" text="About" />

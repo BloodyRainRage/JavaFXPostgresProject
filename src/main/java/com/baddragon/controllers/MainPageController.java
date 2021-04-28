@@ -160,7 +160,7 @@ public class MainPageController implements Initializable {
 
     @FXML
     void refresh(ActionEvent event) {
-        showRecords();
+        updateForm();
     }
 
     @FXML
@@ -326,6 +326,8 @@ public class MainPageController implements Initializable {
 
             }
 
+            resultSet.close();
+            connection.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -361,9 +363,45 @@ public class MainPageController implements Initializable {
         try {
             Stage primaryStage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/editcars.fxml"));
-            Scene scene = new Scene(root, 570, 456);
+            Scene scene = new Scene(root, 625, 465);
             primaryStage.setScene(scene);
             primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onMastersEdit(){
+        try {
+            Stage primaryStage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/editmasters.fxml"));
+            Scene scene = new Scene(root, 600, 336);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onServiceEdit(){
+        try {
+            Stage primaryStage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/editservices.fxml"));
+            Scene scene = new Scene(root, 727, 458);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void onMenuExport(){
+        try {
+            Stage primaryStage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/reports.fxml"));
+            Scene scene = new Scene(root, 600, 400);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+            ReportsController.stage = primaryStage;
         } catch (IOException e) {
             e.printStackTrace();
         }

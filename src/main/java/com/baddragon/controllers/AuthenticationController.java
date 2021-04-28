@@ -32,7 +32,8 @@ public class AuthenticationController implements Initializable {
     private Button loginButton;
 
     public void login(ActionEvent event) {
-        Authenticator authenticator = new MockAuthenticator();
+//        Authenticator authenticator = new MockAuthenticator();
+        Authenticator authenticator = new Authenticator();
         try {
             if (authenticator.loginIsCorrect(loginField.getText())) {
                 if (authenticator.checkLogPassPair(loginField.getText(), passwordField.getText())) {

@@ -115,7 +115,31 @@ public class CarsController implements Initializable {
 
     @FXML
     void update(ActionEvent event) {
+        if(txtNum.getText().isEmpty() || txtCol.getText().isEmpty() || txtMark.getText().isEmpty()){
+            return;
+        }
+        Integer id = Integer.parseInt(txtId.getText());
+        String num = txtNum.getText();
+        String color = txtCol.getText();
+        String mark = txtMark.getText();
+        Boolean foreign = checkIsFor.isSelected();
 
+        String sqlStatement = "update cars set num=?, color=?, mark=?, is_foreign=? where id=?;";
+
+        Connection connection = Connector.getInstance().getConnection();
+        try {
+            PreparedStatement statement = connection.prepareStatement(sqlStatement);
+            statement.setString(1, num);
+            statement.setString(2, color);
+            statement.setString(3, mark);
+            statement.setBoolean(4, foreign);
+            statement.setInt(5, id);
+            statement.execute();
+            connection.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        refresh();
     }
 
     public void showCars(){
